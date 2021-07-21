@@ -29,6 +29,6 @@ const middle = (array) => {
 }
 
 console.log(middle([1])) // => returns []
-console.log(middle([1,2,3]))
+console.log(middle([1,2,3])) // => returns [2]
 console.log(middle([2,3,4,5,6,7]))  // => returns [4,5]
 assertArrayEqual(middle([1,2,3,4,5]), [3]) // => returns ✅Assertion Passed: 3 === 3}
