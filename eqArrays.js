@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 //Checks if two arrays are identical
 const eqArrays = (firstArr, secondArr) => {
   if(firstArr.length === secondArr.length) {
