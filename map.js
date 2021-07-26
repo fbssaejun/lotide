@@ -1,18 +1,6 @@
 //Assertion function
-const eqArrays = (firstArr, secondArr) => {
-  if(firstArr.length === secondArr.length) {
-  for(let i = 0; i < firstArr.length; i++) {
-    if(firstArr[i] !== secondArr[i]) {
-      return false;
-    } 
-   }
-   return true;
-  }
-}
-
-const assertArraysEqual = (actual, expected) => {
-  eqArrays(actual, expected) ? console.log(`✅Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑Assertion Failed: ${actual} !== ${expected}`);
-}
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 
 //Map function
@@ -22,7 +10,9 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-}
+};
+
+module.exports = map;
 
 
 //Test Cases : 

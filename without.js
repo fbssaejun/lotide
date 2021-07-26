@@ -1,18 +1,7 @@
-const eqArrays = (firstArr, secondArr) => {
-  if(firstArr.length === secondArr.length) {
-  for(let i = 0; i < firstArr.length; i++) {
-    if(firstArr[i] !== secondArr[i]) {
-      return false;
-    } 
-   }
-   return true;
-  }
-}
+const eqArrays = require('./eqArrays')
+const assertArrayEqual = require('./assertArraysEqual')
 
-const assertArrayEqual = (actual, expected) => {
-  eqArrays(actual, expected) ? console.log(`✅Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑Assertion Failed: ${actual} !== ${expected}`);
-}
-
+//Returns array without the element specified if contained in source array
 const without = (source, itemsToRemove) => {
   let result = []
   if(eqArrays(source, itemsToRemove)) {
@@ -23,16 +12,14 @@ const without = (source, itemsToRemove) => {
       result.push(source[i])
     }
   }
-  return result
-}
+  return result;
+};
 
-
+module.exports = without;
 
 //Test statements
 console.log(without([1,2,3],[1,2,3]))// => There's nothing that you like!
 console.log(without([1, 2, 3], [1]))// => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); 
-assertArrayEqual(words, ["hello", "world", "lighthouse"]);
+assertArrayEqual(["hello", "world", "lighthouse"], ["hello", "world", "lighthouse"]);

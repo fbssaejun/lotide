@@ -1,18 +1,6 @@
-const assertEqual = function(actual, expected) {
-  actual === expected ? console.log(`✅Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑Assertion Failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
-//Checks if two arrays are identical
-const eqArrays = (firstArr, secondArr) => {
-  if(firstArr.length === secondArr.length) {
-  for(let i = 0; i < firstArr.length; i++) {
-    if(firstArr[i] !== secondArr[i]) {
-      return false;
-    } 
-   }
-   return true;
-  } 
-}
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
@@ -42,6 +30,8 @@ const eqObjects = function(object1, object2) {
   }
   return conditionalCheck;
 }
+
+module.exports = eqObjects;
 
 //Test code :
 const ab = { a: "1", b: "2" };
