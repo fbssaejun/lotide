@@ -1,6 +1,4 @@
-const assertArraysEqual = require('./assertArraysEqual')
-
-
+//return all the indices in the string where each character is located.
 const letterPositions = function(sentence) {
   const results = {};
   const combinedSentence = sentence.split(' ').join('')
@@ -19,9 +17,6 @@ const letterPositions = function(sentence) {
 
 module.exports = letterPositions;
 
-//Test Case:
-console.log(letterPositions("hello howdy"));
-assertArraysEqual(letterPositions("hello").e, [1]);
 
 
 

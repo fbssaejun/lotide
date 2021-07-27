@@ -1,3 +1,4 @@
+//take in an array containing nested arrays, and return a single array with all the elements in the array.
 const flatten = (array) => {
   let flatArray = [];
   for (let i = 0; i < array.length; i++) {
@@ -13,4 +14,3 @@ const flatten = (array) => {
 }
 
 module.exports = flatten;
-
